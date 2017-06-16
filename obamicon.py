@@ -25,10 +25,13 @@ image_list = list(image_list)
 recolored = []
 for pixel in image_list:
 
+    #intesity is total of tuple
     intensity = pixel[0] + pixel[1] + pixel[2]
-
-    #loop through pixles
     
+    if intensity <182:
+        recolored.append(darkBlue)
+    elif intensity >= 182 and <= 364:
+        recolored.append(red)
 
 # Create a new image using the recolored list. Display and save the image.
 new_image = Image.new("RGB", my_image.size)
